@@ -68,7 +68,9 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* [> component of dmenucmd, manipulated in spawn() <] */
 //static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *dmenucmd[] = { "rofi", "-show", "drun", "-theme", "dmenu", "-font", "Ubuntu Mono 10" };
+static const char *dmenucmd[] = { "rofi", "-show", "run", "-modi", "run,drun", "-theme", "dmenu", "-font", "Ubuntu Mono 10" };
+static const char *sshcmd[] = { "rofi", "-show", "ssh", "-modi", "ssh", "-theme", "dmenu", "-font", "Ubuntu Mono 10" };
+static const char *vnccmd[] = { "rofi", "-show", "vnc", "-modi", "vnc:/home/rafael/.config/rofi/scripts/vnc.sh", "-theme", "dmenu", "-font", "Ubuntu Mono 10" };
 static const char *termcmd[] = { "alacritty", NULL };
 static const char *upvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
 static const char *downvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
@@ -81,6 +83,8 @@ static const char *notecmd[] = { "alacritty", "-e", "vim", "+", "/home/rafael/Sy
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_s,      spawn,          {.v = sshcmd } },
+	{ MODKEY,                       XK_v,      spawn,          {.v = vnccmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
