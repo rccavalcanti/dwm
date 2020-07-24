@@ -3,6 +3,9 @@
 
 /* See LICENSE file for copyright and license details. */
 
+/* For multimedia keys */
+#include <X11/XF86keysym.h>
+
 /* patches */
 static const unsigned int gappx     = 6;        /* gap pixel between windows */
 
@@ -64,8 +67,10 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* [> component of dmenucmd, manipulated in spawn() <] */
 //static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *dmenucmd[] = { "rofi", "-show", "drun", "-theme", "dmenu", "-font", "Ubuntu Mono 10" };
-static const char *termcmd[]  = { "alacritty", NULL };
-
+static const char *termcmd[] = { "alacritty", NULL };
+static const char *upvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
+static const char *downvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
+static const char *mutevol[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
 static const char *browsercmd[] = { "x-www-browser", NULL };
 static const char *joplincmd[] = { "joplin", NULL };
 static const char *vimcmd[] = { "alacritty", "-e", "vim" };
@@ -93,6 +98,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 
+	/* Audio */
+	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
+	{ 0,                            XF86XK_AudioMute, spawn, {.v = mutevol } },
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = upvol } },
 	/* Applications */
 	{ MODKEY|Mod1Mask,              XK_w,      spawn,          {.v = browsercmd } },
 	{ MODKEY|Mod1Mask,              XK_j,      spawn,          {.v = joplincmd } },
