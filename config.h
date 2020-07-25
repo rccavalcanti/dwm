@@ -76,14 +76,17 @@ static const char *vnccmd[] = { "rofi", "-show", "vnc", "-modi", "vnc:/home/rafa
 static const char *termcmd[] = { "alacritty", NULL };
 static const char *lockcmd[] = { "slock", NULL };
 static const char *pavucmd[] = { "pavucontrol", NULL };
-static const char *upvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
-static const char *downvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
-static const char *mutevol[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
+static const char *upvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%" };
+static const char *downvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%" };
+static const char *mutevol[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle" };
+static const char *printoptcmd[] = { "deepin-screenshot", NULL };
 static const char *audacitycmd[] = { "audacity", NULL };
 static const char *browsercmd[] = { "x-www-browser", NULL };
 static const char *cmuscmd[] = { "alacritty", "--class", "cmus", "-e", "cmus" };
+static const char *filescmd[] = { "nautilus", NULL };
 static const char *joplincmd[] = { "joplin", NULL };
 static const char *notecmd[] = { "alacritty", "-e", "vim", "+", "/home/rafael/Sync/quick_note.md" };
+static const char *rangercmd[] = { "alacritty", "-e", "ranger" };
 static const char *telegramcmd[] = { "telegram-desktop", NULL };
 static const char *vimcmd[] = { "alacritty", "-e", "vim" };
 static const char *whatsappcmd[] = { "whatsapp", NULL };
@@ -118,8 +121,14 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
 	{ 0,                            XF86XK_AudioMute, spawn, {.v = mutevol } },
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = upvol } },
+
+	/* Printscreen */
+	{ Mod4Mask|ShiftMask,           XK_s,  spawn,          {.v = printoptcmd } },
+
 	/* Applications */
 	{ MODKEY|Mod1Mask,              XK_a,      spawn,          {.v = audacitycmd } },
+	{ MODKEY|Mod1Mask,              XK_e,      spawn,          {.v = filescmd } },
+	{ MODKEY|Mod1Mask,              XK_f,      spawn,          {.v = rangercmd } },
 	{ MODKEY|Mod1Mask,              XK_h,      spawn,          {.v = whatsappcmd } },
 	{ MODKEY|Mod1Mask,              XK_j,      spawn,          {.v = joplincmd } },
 	{ MODKEY|Mod1Mask,              XK_m,      spawn,          {.v = cmuscmd } },
