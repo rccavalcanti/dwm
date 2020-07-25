@@ -76,22 +76,6 @@ static const char *dmenucmd[] = { "rofi", "-show", "run", "-modi", "run,drun", "
 static const char *sshcmd[] = { "rofi", "-show", "ssh", "-modi", "ssh", "-theme", "dmenu", "-font", "Ubuntu Mono 10" };
 static const char *vnccmd[] = { "rofi", "-show", "vnc", "-modi", "vnc:/home/rafael/.config/rofi/scripts/vnc.sh", "-theme", "dmenu", "-font", "Ubuntu Mono 10" };
 static const char *termcmd[] = { "alacritty", NULL };
-static const char *lockcmd[] = { "slock", NULL };
-static const char *pavucmd[] = { "pavucontrol", NULL };
-static const char *upvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%" };
-static const char *downvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%" };
-static const char *mutevol[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle" };
-static const char *printoptcmd[] = { "deepin-screenshot", NULL };
-static const char *audacitycmd[] = { "audacity", NULL };
-static const char *browsercmd[] = { "x-www-browser", NULL };
-static const char *cmuscmd[] = { "alacritty", "--class", "cmus", "-e", "cmus" };
-static const char *filescmd[] = { "nautilus", NULL };
-static const char *joplincmd[] = { "joplin", NULL };
-static const char *notecmd[] = { "alacritty", "-e", "vim", "+", "/home/rafael/Sync/quick_note.md" };
-static const char *rangercmd[] = { "alacritty", "-e", "ranger" };
-static const char *telegramcmd[] = { "telegram-desktop", NULL };
-static const char *vimcmd[] = { "alacritty", "-e", "vim" };
-static const char *whatsappcmd[] = { "whatsapp", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -99,8 +83,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_s,      spawn,          {.v = sshcmd } },
 	{ MODKEY,                       XK_v,      spawn,          {.v = vnccmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_Escape, spawn,          {.v = lockcmd } },
-	{ MODKEY,                       XK_a,      spawn,          {.v = pavucmd } },
+	{ MODKEY,                       XK_Escape, spawn,          SHCMD("slock") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -123,24 +106,25 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 
 	/* Audio */
-	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
-	{ 0,                            XF86XK_AudioMute, spawn, {.v = mutevol } },
-	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = upvol } },
+	{ 0,                            XF86XK_AudioMute, spawn,   SHCMD("pactl set-sink-volume @DEFAULT_SINK@ toggle")  },
+	{ 0,                            XF86XK_AudioLowerVolume, spawn, SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%") },
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn, SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%") },
+	{ MODKEY,                       XK_a,      spawn,          SHCMD("pavucontrol") },
 
 	/* Printscreen */
-	{ Mod4Mask|ShiftMask,           XK_s,  spawn,          {.v = printoptcmd } },
+	{ Mod4Mask|ShiftMask,           XK_s,      spawn,          SHCMD("deepin-screenshot") },
 
 	/* Applications */
-	{ MODKEY|Mod1Mask,              XK_a,      spawn,          {.v = audacitycmd } },
-	{ MODKEY|Mod1Mask,              XK_e,      spawn,          {.v = filescmd } },
-	{ MODKEY|Mod1Mask,              XK_f,      spawn,          {.v = rangercmd } },
-	{ MODKEY|Mod1Mask,              XK_h,      spawn,          {.v = whatsappcmd } },
-	{ MODKEY|Mod1Mask,              XK_j,      spawn,          {.v = joplincmd } },
-	{ MODKEY|Mod1Mask,              XK_m,      spawn,          {.v = cmuscmd } },
-	{ MODKEY|Mod1Mask,              XK_n,      spawn,          {.v = notecmd } },
-	{ MODKEY|Mod1Mask,              XK_t,      spawn,          {.v = telegramcmd } },
-	{ MODKEY|Mod1Mask,              XK_v,      spawn,          {.v = vimcmd } },
-	{ MODKEY|Mod1Mask,              XK_w,      spawn,          {.v = browsercmd } },
+	{ MODKEY|Mod1Mask,              XK_a,      spawn,          SHCMD("audacity") },
+	{ MODKEY|Mod1Mask,              XK_e,      spawn,          SHCMD("nautilus") },
+	{ MODKEY|Mod1Mask,              XK_f,      spawn,          SHCMD("alacritty -e ranger") },
+	{ MODKEY|Mod1Mask,              XK_h,      spawn,          SHCMD("chrome-whatsapp") },
+	{ MODKEY|Mod1Mask,              XK_j,      spawn,          SHCMD("joplin") },
+	{ MODKEY|Mod1Mask,              XK_m,      spawn,          SHCMD("alacritty -e cmus") },
+	{ MODKEY|Mod1Mask,              XK_n,      spawn,          SHCMD("alacritty -e quick-note") },
+	{ MODKEY|Mod1Mask,              XK_t,      spawn,          SHCMD("telegram-desktop") },
+	{ MODKEY|Mod1Mask,              XK_v,      spawn,          SHCMD("alacritty -e vim") },
+	{ MODKEY|Mod1Mask,              XK_w,      spawn,          SHCMD("x-www-browser") },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
