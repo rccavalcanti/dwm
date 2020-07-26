@@ -73,9 +73,6 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* [> component of dmenucmd, manipulated in spawn() <] */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-//static const char *dmenucmd[] = { "rofi", "-show", "run", "-modi", "run,drun", "-theme", "dmenu", "-font", "Ubuntu Mono 10" };
-static const char *sshcmd[] = { "rofi", "-show", "ssh", "-modi", "ssh", "-theme", "dmenu", "-font", "Ubuntu Mono 10" };
-static const char *vnccmd[] = { "rofi", "-show", "vnc", "-modi", "vnc:/home/rafael/.config/rofi/scripts/vnc.sh", "-theme", "dmenu", "-font", "Ubuntu Mono 10" };
 static const char *termcmd[] = { "alacritty", NULL };
 
 static Key keys[] = {
@@ -105,9 +102,11 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 
 	/* dmenu, rofi */
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_s,      spawn,          {.v = sshcmd } },
-	{ MODKEY,                       XK_v,      spawn,          {.v = vnccmd } },
+	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run_i") },
+	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("j4-dmenu-desktop") },
+	{ MODKEY,                       XK_s,      spawn,          SHCMD("dmenu_ssh") },
+	{ MODKEY,                       XK_v,      spawn,          SHCMD("dmenu_ssh --vnc") },
+	{ MODKEY,                       XK_r,      spawn,          SHCMD("dmenu_config") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("dmenu_websearch") },
 
 	/* Audio */
