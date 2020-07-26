@@ -79,52 +79,55 @@ static const char *termcmd[] = { "alacritty", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_s,      spawn,          {.v = sshcmd } },
-	{ MODKEY,                       XK_v,      spawn,          {.v = vnccmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_Escape, spawn,          SHCMD("slock") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_equal,  incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_minus,  incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_space,  zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,            		        XK_period, cyclelayout,    {.i = +1 } },
+	{ MODKEY|ShiftMask,  		        XK_period, cyclelayout,    {.i = -1 } },
+	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_y,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[3]} },
-	{ MODKEY,                       XK_o,      setlayout,      {.v = &layouts[4]} },
+	{ MODKEY|ShiftMask,             XK_u,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY|ShiftMask,             XK_Return, setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 
+	/* dmenu, rofi */
+	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_s,      spawn,          {.v = sshcmd } },
+	{ MODKEY,                       XK_v,      spawn,          {.v = vnccmd } },
+	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("dmenu_websearch") },
+
 	/* Audio */
 	{ 0,                            XF86XK_AudioMute, spawn,   SHCMD("pactl set-sink-volume @DEFAULT_SINK@ toggle")  },
 	{ 0,                            XF86XK_AudioLowerVolume, spawn, SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%") },
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn, SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%") },
-	{ MODKEY,                       XK_a,      spawn,          SHCMD("pavucontrol") },
+	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("pavucontrol") },
 
 	/* Printscreen */
 	{ Mod4Mask|ShiftMask,           XK_s,      spawn,          SHCMD("deepin-screenshot") },
 
 	/* Applications */
-	{ MODKEY|Mod1Mask,              XK_a,      spawn,          SHCMD("audacity") },
-	{ MODKEY|Mod1Mask,              XK_e,      spawn,          SHCMD("nautilus") },
-	{ MODKEY|Mod1Mask,              XK_f,      spawn,          SHCMD("alacritty -e ranger") },
-	{ MODKEY|Mod1Mask,              XK_h,      spawn,          SHCMD("chrome-whatsapp") },
-	{ MODKEY|Mod1Mask,              XK_j,      spawn,          SHCMD("joplin") },
-	{ MODKEY|Mod1Mask,              XK_m,      spawn,          SHCMD("alacritty -e cmus") },
-	{ MODKEY|Mod1Mask,              XK_n,      spawn,          SHCMD("alacritty -e quick-note") },
-	{ MODKEY|Mod1Mask,              XK_t,      spawn,          SHCMD("telegram-desktop") },
-	{ MODKEY|Mod1Mask,              XK_v,      spawn,          SHCMD("alacritty -e vim") },
-	{ MODKEY|Mod1Mask,              XK_w,      spawn,          SHCMD("x-www-browser") },
+	{ MODKEY,                       XK_a,      spawn,          SHCMD("audacity") },
+	{ MODKEY,                       XK_c,      spawn,          SHCMD("telegram-desktop") },
+	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("chrome-whatsapp") },
+	{ MODKEY,                       XK_e,      spawn,          SHCMD("alacritty -e ranger") },
+	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("nautilus") },
+	{ MODKEY,                       XK_m,      spawn,          SHCMD("alacritty -e cmus") },
+	{ MODKEY,                       XK_n,      spawn,          SHCMD("alacritty -e quick-note") },
+	{ MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("joplin") },
+	{ MODKEY,                       XK_w,      spawn,          SHCMD("x-www-browser") },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
