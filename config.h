@@ -119,7 +119,12 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("pavucontrol") },
 
 	/* Printscreen */
-	{ Mod4Mask|ShiftMask,           XK_s,      spawn,          SHCMD("deepin-screenshot") },
+	{ 0,                            XK_Print,      spawn,      SHCMD("maim ~/Pictures/screenshot_$(date +%s).png") },
+	{ ShiftMask,                    XK_Print,      spawn,      SHCMD("maim | xclip -selection clipboard -t image/png") },
+	{ Mod1Mask,                     XK_Print,      spawn,      SHCMD("maim -i $(xdotool getactivewindow) ~/Pictures/screenshot_$(date +%s).png") },
+	{ Mod1Mask|ShiftMask,           XK_Print,      spawn,      SHCMD("maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png") },
+	{ ControlMask,                  XK_Print,      spawn,      SHCMD("maim -s ~/Pictures/screenshot_$(date +%s).png") },
+	{ ControlMask|ShiftMask,        XK_Print,      spawn,      SHCMD("maim -s | xclip -selection clipboard -t image/png") },
 
 	/* Applications */
 	{ 0,                            XF86XK_Calculator, spawn,  SHCMD("gnome-calculator") },
