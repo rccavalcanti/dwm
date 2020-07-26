@@ -73,7 +73,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* [> component of dmenucmd, manipulated in spawn() <] */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[] = { "alacritty", NULL };
+static const char *termcmd[] = { "/bin/sh", "-c", "$TERMINAL", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -123,10 +123,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("audacity") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("telegram-desktop") },
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("chrome-whatsapp") },
-	{ MODKEY,                       XK_e,      spawn,          SHCMD("alacritty -e ranger") },
+	{ MODKEY,                       XK_e,      spawn,          SHCMD("$TERMINAL_RUN ranger") },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("nautilus") },
-	{ MODKEY,                       XK_m,      spawn,          SHCMD("alacritty -e cmus") },
-	{ MODKEY,                       XK_n,      spawn,          SHCMD("alacritty -e quick-note") },
+	{ MODKEY,                       XK_m,      spawn,          SHCMD("$TERMINAL_RUN cmus") },
+	{ MODKEY,                       XK_n,      spawn,          SHCMD("$TERMINAL_RUN quick-note") },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("joplin") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("x-www-browser") },
 
