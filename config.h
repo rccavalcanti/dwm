@@ -37,6 +37,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "Gnome-calculator", NULL, NULL,     0,            1,           -1 },
 	{ "Code",     NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "Gnome-boxes", NULL,    NULL,       1 << 6,       0,           -1 },
 	{ "Alacritty", "cmus",    NULL,       1 << 7,       0,           -1 },
@@ -119,6 +120,7 @@ static Key keys[] = {
 	{ Mod4Mask|ShiftMask,           XK_s,      spawn,          SHCMD("deepin-screenshot") },
 
 	/* Applications */
+	{ 0,                            XF86XK_Calculator, spawn,  SHCMD("gnome-calculator") },
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("audacity") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("telegram-desktop") },
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("chrome-whatsapp") },
