@@ -104,12 +104,13 @@ static Key keys[] = {
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 
-	/* dmenu, rofi */
+	/* dmenu */
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run_i") },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("j4-dmenu-desktop") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("dmenu_ssh") },
-	{ MODKEY,                       XK_v,      spawn,          SHCMD("dmenu_ssh --vnc") },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("dmenu_ssh --vnc") },
 	{ MODKEY,                       XK_r,      spawn,          SHCMD("dmenu_config") },
+	{ ControlMask|Mod1Mask,         XK_v,      spawn,          SHCMD("clipmenu") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("dmenu_websearch") },
 
 	/* Audio */
