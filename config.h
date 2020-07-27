@@ -44,6 +44,8 @@ static const Rule rules[] = {
 	{ "Gnome-calculator", NULL, NULL,     0,            1,           -1 },
 	{ "Code",     NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "Gnome-boxes", NULL,    NULL,       1 << 5,       0,           -1 },
+	{ "TelegramDesktop", NULL, NULL,      1 << 6,       0,           -1 },
+	{ "Google-chrome", "crx_hnpfjngllnobngcgfapefoaidbinmjnm", NULL, 1 << 6, 0, -1 },
 	{ "Alacritty", "cmus",    NULL,       1 << 7,       0,           -1 },
 	{ "Spotify",  NULL,       NULL,       1 << 7,       0,           -1 },
 	{ "Joplin",   NULL,       NULL,       1 << 8,       0,           -1 },
