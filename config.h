@@ -143,12 +143,18 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("pavucontrol") },
 
 	/* Printscreen */
-	{ 0,                            XK_Print,      spawn,      SHCMD("maim ~/Pictures/screenshot_$(date +%s).png") },
-	{ ShiftMask,                    XK_Print,      spawn,      SHCMD("maim | xclip -selection clipboard -t image/png") },
-	{ Mod1Mask,                     XK_Print,      spawn,      SHCMD("maim -i $(xdotool getactivewindow) ~/Pictures/screenshot_$(date +%s).png") },
-	{ Mod1Mask|ShiftMask,           XK_Print,      spawn,      SHCMD("maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png") },
-	{ ControlMask,                  XK_Print,      spawn,      SHCMD("maim -s ~/Pictures/screenshot_$(date +%s).png") },
-	{ ControlMask|ShiftMask,        XK_Print,      spawn,      SHCMD("maim -s | xclip -selection clipboard -t image/png") },
+	{ 0,                            XK_Print,      spawn,      SHCMD("maim ~/Pictures/screenshot_$(date +%s).png \
+			&& notify-send 'Screenshot saved to ~/Pictures'") },
+	{ ShiftMask,                    XK_Print,      spawn,      SHCMD("maim | xclip -selection clipboard -t image/png \
+			&& notify-send 'Screenshot copied to clipboard'") },
+	{ Mod1Mask,                     XK_Print,      spawn,      SHCMD("maim -i $(xdotool getactivewindow) ~/Pictures/screenshot_$(date +%s).png \
+			&& notify-send 'Screenshot saved to ~/Pictures'") },
+	{ Mod1Mask|ShiftMask,           XK_Print,      spawn,      SHCMD("maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png \
+			&& notify-send 'Screenshot copied to clipboard'") },
+	{ ControlMask,                  XK_Print,      spawn,      SHCMD("maim -s ~/Pictures/screenshot_$(date +%s).png \
+			&& notify-send 'Screenshot saved to ~/Pictures'") },
+	{ ControlMask|ShiftMask,        XK_Print,      spawn,      SHCMD("maim -s | xclip -selection clipboard -t image/png \
+			&& notify-send 'Screenshot copied to clipboard'") },
 
 	/* Applications */
 	{ 0,                            XF86XK_Calculator, spawn,  SHCMD("gnome-calculator") },
