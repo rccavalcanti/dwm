@@ -135,7 +135,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("dmenu_ssh --vnc") },
 	{ MODKEY,                       XK_r,      spawn,          SHCMD("dmenu_config") },
 	{ ControlMask|Mod1Mask,         XK_v,      spawn,          SHCMD("clipmenu") },
-	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("dmenu_websearch") },
 
 	/* Audio */
 	{ 0,                            XF86XK_AudioMute, spawn,   {.v = mute } },
@@ -158,10 +157,13 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("chrome-whatsapp") },
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("$TERMINAL_RUN ranger") },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("nautilus") },
-	{ MODKEY,                       XK_m,      spawn,          SHCMD("$TERMINAL_RUN cmus") },
+	{ MODKEY,                       XK_m,      spawn,          SHCMD("chrome-myfitnesspal") },
+	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("$TERMINAL_RUN cmus") },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD("$TERMINAL_RUN quick-note") },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("joplin") },
+	{ MODKEY,                       XK_p,      spawn,          SHCMD("chrome-projetos") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("x-www-browser") },
+	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("x-www-browser --incognito") },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
