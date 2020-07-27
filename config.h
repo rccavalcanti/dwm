@@ -92,6 +92,9 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* [> component of dmenucmd, manipulated in spawn() <] */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[] = { "/bin/sh", "-c", "$TERMINAL", NULL };
+static const char *volup[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
+static const char *voldown[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
+static const char *mute[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -135,9 +138,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("dmenu_websearch") },
 
 	/* Audio */
-	{ 0,                            XF86XK_AudioMute, spawn,   SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle")  },
-	{ 0,                            XF86XK_AudioLowerVolume, spawn, SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%") },
-	{ 0,                            XF86XK_AudioRaiseVolume, spawn, SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%") },
+	{ 0,                            XF86XK_AudioMute, spawn,   {.v = mute } },
+	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = voldown } },
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = volup } },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("pavucontrol") },
 
 	/* Printscreen */
@@ -180,7 +183,9 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button2,        spawn,          {.v = mute } },
+	{ ClkStatusText,        0,              Button4,        spawn,          {.v = volup } },
+	{ ClkStatusText,        0,              Button5,        spawn,          {.v = voldown } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
