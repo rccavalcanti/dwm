@@ -32,7 +32,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "WWW", "DEV", "W3", "W4", "W5", "VMs", "CHAT", "MUSIC", "NOTES" };
+static const char *tags[] = { "WWW", "DEV", "3", "4", "5", "VMs", "CHAT", "MUSIC", "NOTES" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -146,17 +146,17 @@ static Key keys[] = {
 
 	/* Printscreen */
 	{ 0,                            XK_Print,      spawn,      SHCMD("maim ~/Pictures/screenshot_$(date +%s).png \
-			&& notify-send 'Screenshot saved to ~/Pictures'") },
+			&& notify-send 'Screenshot saved to ~/Pictures.'") },
 	{ ShiftMask,                    XK_Print,      spawn,      SHCMD("maim | xclip -selection clipboard -t image/png \
-			&& notify-send 'Screenshot copied to clipboard'") },
+			&& notify-send 'Screenshot copied to clipboard.'") },
 	{ Mod1Mask,                     XK_Print,      spawn,      SHCMD("maim -i $(xdotool getactivewindow) ~/Pictures/screenshot_$(date +%s).png \
-			&& notify-send 'Screenshot saved to ~/Pictures'") },
+			&& notify-send 'Screenshot saved to ~/Pictures.'") },
 	{ Mod1Mask|ShiftMask,           XK_Print,      spawn,      SHCMD("maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png \
-			&& notify-send 'Screenshot copied to clipboard'") },
+			&& notify-send 'Screenshot copied to clipboard.'") },
 	{ ControlMask,                  XK_Print,      spawn,      SHCMD("maim -s ~/Pictures/screenshot_$(date +%s).png \
-			&& notify-send 'Screenshot saved to ~/Pictures'") },
+			&& notify-send 'Screenshot saved to ~/Pictures.'") },
 	{ ControlMask|ShiftMask,        XK_Print,      spawn,      SHCMD("maim -s | xclip -selection clipboard -t image/png \
-			&& notify-send 'Screenshot copied to clipboard'") },
+			&& notify-send 'Screenshot copied to clipboard.'") },
 
 	/* Applications */
 	{ 0,                            XF86XK_Calculator, spawn,  SHCMD("gnome-calculator") },
