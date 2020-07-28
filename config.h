@@ -142,6 +142,11 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioMute, spawn,   {.v = mute } },
 	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = voldown } },
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = volup } },
+	/* Command any player but select Chromium last */
+	{ 0,                            XF86XK_AudioPrev, spawn,   SHCMD("playerctl --player=%any,chromium previous") },
+	{ 0,                            XF86XK_AudioNext, spawn,   SHCMD("playerctl --player=%any,chromium next") },
+	{ 0,                            XF86XK_AudioPlay, spawn,   SHCMD("playerctl --player=%any,chromium play-pause") },
+	{ 0,                            XF86XK_AudioStop, spawn,   SHCMD("playerctl --player=%any,chromium stop") },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("pavucontrol") },
 
 	/* Printscreen */
