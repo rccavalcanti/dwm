@@ -163,7 +163,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("audacity") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("telegram-desktop") },
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("chrome-whatsapp") },
-	{ MODKEY,                       XK_e,      spawn,          SHCMD("$TERMINAL_RUN ranger") },
+	{ MODKEY,                       XK_e,      spawn,          SHCMD("$TERMINAL_RUN zsh -c 'source /usr/share/autojump/autojump.zsh && ranger'") },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("nautilus") },
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("chrome-myfitnesspal") },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("$TERMINAL_RUN cmus") },
