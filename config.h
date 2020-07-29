@@ -97,6 +97,10 @@ static const char *termcmd[] = { "/bin/sh", "-c", "$TERMINAL", NULL };
 static const char *volup[] = { "/bin/sh", "-c",  "pactl set-sink-volume @DEFAULT_SINK@ +5% && dwmbar", NULL };
 static const char *voldown[] = { "/bin/sh", "-c",  "pactl set-sink-volume @DEFAULT_SINK@ -5% && dwmbar", NULL };
 static const char *mute[] = { "/bin/sh", "-c",  "pactl set-sink-mute @DEFAULT_SINK@ toggle && dwmbar", NULL };
+static const char *player_prev[] = { "/bin/sh", "-c", "playerctl --player=%any,chromium previous && dwmbar", NULL };
+static const char *player_next[] = { "/bin/sh", "-c", "playerctl --player=%any,chromium next && dwmbar", NULL };
+static const char *player_pause[] = { "/bin/sh", "-c", "playerctl --player=%any,chromium play-pause && dwmbar", NULL };
+static const char *player_stop[] = { "/bin/sh", "-c", "playerctl --player=%any,chromium stop && dwmbar", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -143,10 +147,10 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = voldown } },
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = volup } },
 	/* Command any player but select Chromium last */
-	{ 0,                            XF86XK_AudioPrev, spawn,   SHCMD("playerctl --player=%any,chromium previous && dwmbar") },
-	{ 0,                            XF86XK_AudioNext, spawn,   SHCMD("playerctl --player=%any,chromium next && dwmbar") },
-	{ 0,                            XF86XK_AudioPlay, spawn,   SHCMD("playerctl --player=%any,chromium play-pause && dwmbar") },
-	{ 0,                            XF86XK_AudioStop, spawn,   SHCMD("playerctl --player=%any,chromium stop && dwmbar") },
+	{ 0,                            XF86XK_AudioPrev, spawn,   {.v = player_prev } },
+	{ 0,                            XF86XK_AudioNext, spawn,   {.v = player_next } },
+	{ 0,                            XF86XK_AudioPlay, spawn,   {.v = player_pause } },
+	{ 0,                            XF86XK_AudioStop, spawn,   {.v = player_stop } },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("pavucontrol") },
 
 	/* Printscreen */
@@ -198,7 +202,9 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = mute } },
+	{ ClkStatusText,        0,              Button1,        spawn,          {.v = player_next } },
+	{ ClkStatusText,        0,              Button2,        spawn,          {.v = player_pause } },
+	{ ClkStatusText,        0,              Button3,        spawn,          {.v = player_prev } },
 	{ ClkStatusText,        0,              Button4,        spawn,          {.v = volup } },
 	{ ClkStatusText,        0,              Button5,        spawn,          {.v = voldown } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
