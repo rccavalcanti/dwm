@@ -114,8 +114,8 @@ static Key keys[] = {
 	{ Mod1Mask,                     XK_Tab,    shiftview,      {.i = +1} },
 	{ Mod1Mask|ShiftMask,           XK_Tab,    shiftview,      {.i = -1} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ MODKEY,            		        XK_period, cyclelayout,    {.i = +1 } },
-	{ MODKEY|ShiftMask,  		        XK_period, cyclelayout,    {.i = -1 } },
+	{ MODKEY,                       XK_comma, cyclelayout,    {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_comma, cyclelayout,    {.i = -1 } },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} }, // tiling
 	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[1]} }, // floating
 	{ MODKEY,                       XK_y,      setlayout,      {.v = &layouts[2]} }, // monocle
