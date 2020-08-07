@@ -127,7 +127,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_i,      setlayout,      {.v = &layouts[7]} }, // dwindle
 	{ MODKEY|ShiftMask,             XK_Return, setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-	{ MODKEY,                       XK_x,      togglesticky,   {0} },
+	{ MODKEY|ShiftMask,             XK_x,      togglesticky,   {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 
@@ -161,15 +161,16 @@ static Key keys[] = {
 	/* Applications */
 	{ 0,                            XF86XK_Calculator, spawn,  SHCMD("gnome-calculator") },
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("audacity") },
-	{ MODKEY,                       XK_c,      spawn,          SHCMD("org.telegram.desktop") },
-	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("chrome-whatsapp") },
+	{ MODKEY,                       XK_c,      spawn,          SHCMD("chrome-whatsapp") },
+	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("org.telegram.desktop") },
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("$TERMINAL_RUN zsh -c 'source /usr/share/autojump/autojump.zsh && ranger'") },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("nautilus") },
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("chrome-myfitnesspal") },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("$TERMINAL_RUN cmus") },
-	{ MODKEY,                       XK_n,      spawn,          SHCMD("$TERMINAL_RUN quick-note") },
+	{ MODKEY,                       XK_n,      spawn,          SHCMD("$TERMINAL_RUN en") },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("joplin") },
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("chrome-projetos") },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("tomate-gtk") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("x-www-browser") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("x-www-browser --incognito") },
 
