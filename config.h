@@ -12,6 +12,7 @@ static const unsigned int gappx     = 6;        /* gap pixel between windows */
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
+static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 4;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
@@ -32,18 +33,19 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Gnome-calculator", NULL, NULL,     0,            1,           -1 },
-	{ "Nitrogen", NULL,       NULL,       0,            1,           -1 },
-	{ "Code",     NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "Gnome-boxes", NULL,    NULL,       1 << 4,       0,           -1 },
-	{ "TelegramDesktop", NULL, NULL,      1 << 5,       0,           -1 },
-	{ "Google-chrome", "crx_hnpfjngllnobngcgfapefoaidbinmjnm", NULL, 1 << 5, 0, -1 },
-	{ "Alacritty", "cmus",    NULL,       1 << 6,       0,           -1 },
-	{ "Spotify",  NULL,       NULL,       1 << 6,       0,           -1 },
-	{ "Joplin",   NULL,       NULL,       1 << 7,       0,           -1 },
-	{ "Google-chrome", "crx_lejijnoibbpmbfhfefonhbofommclnol", NULL, 1 << 8, 0, -1 },
+	/* class      instance    title       tags mask     isfloating   isterminal  noswallow  monitor */
+	{ "Gimp",     NULL,       NULL,       0,            1,           0,          0,         -1 },
+	{ "Gnome-calculator", NULL, NULL,     0,            1,           0,          0,         -1 },
+	{ "Nitrogen", NULL,       NULL,       0,            1,           0,          0,         -1 },
+	{ "Code",     NULL,       NULL,       1 << 1,       0,           0,          0,         -1 },
+	{ "Gnome-boxes", NULL,    NULL,       1 << 4,       0,           0,          0,         -1 },
+	{ "TelegramDesktop", NULL, NULL,      1 << 5,       0,           0,          0,         -1 },
+	{ "Google-chrome", "crx_hnpfjngllnobngcgfapefoaidbinmjnm", NULL, 1 << 5, 0, 0, 0,       -1 },
+	{ "Alacritty", "cmus",    NULL,       1 << 6,       0,           0,          0,         -1 },
+	{ "Spotify",  NULL,       NULL,       1 << 6,       0,           0,          0,         -1 },
+	{ "Joplin",   NULL,       NULL,       1 << 7,       0,           0,          0,         -1 },
+	{ "Google-chrome", "crx_lejijnoibbpmbfhfefonhbofommclnol", NULL, 1 << 8, 0, 0, 0,       -1 },
+	{ "Alacritty", NULL,      NULL,       0,            0,           1,          0,         -1 },
 };
 
 /* layout(s) */
