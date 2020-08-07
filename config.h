@@ -94,10 +94,10 @@ static const char *termcmd[] = { "/bin/sh", "-c", "$TERMINAL", NULL };
 static const char *volup[] = { "/bin/sh", "-c",  "pactl set-sink-volume @DEFAULT_SINK@ +5% && dwmbar", NULL };
 static const char *voldown[] = { "/bin/sh", "-c",  "pactl set-sink-volume @DEFAULT_SINK@ -5% && dwmbar", NULL };
 static const char *mute[] = { "/bin/sh", "-c",  "pactl set-sink-mute @DEFAULT_SINK@ toggle && dwmbar", NULL };
-static const char *player_prev[] = { "/bin/sh", "-c", "playerctl --player=%any,chromium previous && dwmbar", NULL };
-static const char *player_next[] = { "/bin/sh", "-c", "playerctl --player=%any,chromium next && dwmbar", NULL };
-static const char *player_pause[] = { "/bin/sh", "-c", "playerctl --player=%any,chromium play-pause && dwmbar", NULL };
-static const char *player_stop[] = { "/bin/sh", "-c", "playerctl --player=%any,chromium stop && dwmbar", NULL };
+static const char *player_prev[] = { "/bin/sh", "-c", "playerctl --player=%any,chromium previous && sleep 0.5 && dwmbar", NULL };
+static const char *player_next[] = { "/bin/sh", "-c", "playerctl --player=%any,chromium next && sleep 0.5 && dwmbar", NULL };
+static const char *player_pause[] = { "/bin/sh", "-c", "playerctl --player=%any,chromium play-pause && sleep 0.5 && dwmbar", NULL };
+static const char *player_stop[] = { "/bin/sh", "-c", "playerctl --player=%any,chromium stop && sleep 0.5 && dwmbar", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
