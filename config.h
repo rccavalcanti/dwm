@@ -117,8 +117,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Tab,    shiftview,      {.i = -1} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("xkill") },
-	{ MODKEY,                       XK_comma, cyclelayout,    {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma, cyclelayout,    {.i = -1 } },
+	{ MODKEY,                       XK_comma,  cyclelayout,    {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_comma,  cyclelayout,    {.i = -1 } },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} }, // tiling
 	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[1]} }, // floating
 	{ MODKEY,                       XK_y,      setlayout,      {.v = &layouts[2]} }, // monocle
