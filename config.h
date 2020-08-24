@@ -116,6 +116,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    shiftview,      {.i = +1} },
 	{ MODKEY|ShiftMask,             XK_Tab,    shiftview,      {.i = -1} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
+	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("xkill") },
 	{ MODKEY,                       XK_comma, cyclelayout,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma, cyclelayout,    {.i = -1 } },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} }, // tiling
@@ -152,12 +153,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("pavucontrol") },
 
 	/* Printscreen */
-	{ 0,                            XK_Print,      spawn,      SHCMD("screenshot fullfile") },
-	{ ShiftMask,                    XK_Print,      spawn,      SHCMD("screenshot fullcopy") },
-	{ Mod1Mask,                     XK_Print,      spawn,      SHCMD("screenshot winfile") },
-	{ Mod1Mask|ShiftMask,           XK_Print,      spawn,      SHCMD("screenshot wincopy") },
-	{ ControlMask,                  XK_Print,      spawn,      SHCMD("screenshot selfile") },
-	{ ControlMask|ShiftMask,        XK_Print,      spawn,      SHCMD("screenshot selcopy") },
+	{ 0,                            XK_Print,      spawn,      SHCMD("screenshot") },
+	{ ShiftMask,                    XK_Print,      spawn,      SHCMD("screenshot 'Selection (clipboard)'") },
 
 	/* Applications */
 	{ 0,                            XF86XK_Calculator, spawn,  SHCMD("gnome-calculator") },
@@ -184,7 +181,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_Escape, quit,           {0} },
 	{ MODKEY|ShiftMask,             XK_r,      quit,           {1} },
 };
 
