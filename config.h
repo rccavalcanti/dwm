@@ -149,7 +149,7 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioNext, spawn,   {.v = player_next } },
 	{ 0,                            XF86XK_AudioPlay, spawn,   {.v = player_pause } },
 	{ 0,                            XF86XK_AudioStop, spawn,   {.v = player_stop } },
-	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("pavucontrol") },
+	{ MODKEY,                       XK_v,      spawn,          SHCMD("pavucontrol") },
 
 	/* Printscreen */
 	{ 0,                            XK_Print,      spawn,      SHCMD("screenshot") },
@@ -157,12 +157,11 @@ static Key keys[] = {
 
 	/* Applications */
 	{ 0,                            XF86XK_Calculator, spawn,  SHCMD("gnome-calculator") },
-	{ MODKEY,                       XK_a,      spawn,          SHCMD("audacity") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("chrome-whatsapp") },
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("org.telegram.desktop") },
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("$TERMINAL_RUN zsh -c 'source /usr/share/autojump/autojump.zsh && ranger'") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nautilus") },
-	{ MODKEY,                       XK_m,      spawn,          SHCMD("chrome-myfitnesspal") },
+	{ MODKEY,                       XK_m,      spawn,          SHCMD("spotify") },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("$TERMINAL_RUN cmus") },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD("$TERMINAL_RUN en") },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("joplin") },
