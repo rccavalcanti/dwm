@@ -105,7 +105,6 @@ static Key keys[] = {
 	STACKKEYS(MODKEY,                          focus)
 	STACKKEYS(MODKEY|ShiftMask,                push)
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_Escape, spawn,          SHCMD("slock") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_equal,  incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_minus,  incnmaster,     {.i = -1 } },
@@ -136,9 +135,10 @@ static Key keys[] = {
 	/* dmenu */
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run_i")  },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("j4-dmenu-desktop") },
+	{ MODKEY,                       XK_e,      spawn,          SHCMD("dmenu_config") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("dmenu_ssh") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("dmenu_ssh --vnc") },
-	{ MODKEY,                       XK_r,      spawn,          SHCMD("dmenu_config") },
+	{ MODKEY,                       XK_Escape, spawn,          SHCMD("dmenu_power") },
 	{ ControlMask|Mod1Mask,         XK_v,      spawn,          SHCMD("clipmenu") },
 
 	/* Audio */
@@ -161,8 +161,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("audacity") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("chrome-whatsapp") },
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("org.telegram.desktop") },
-	{ MODKEY,                       XK_e,      spawn,          SHCMD("$TERMINAL_RUN zsh -c 'source /usr/share/autojump/autojump.zsh && ranger'") },
-	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("nautilus") },
+	{ MODKEY,                       XK_f,      spawn,          SHCMD("$TERMINAL_RUN zsh -c 'source /usr/share/autojump/autojump.zsh && ranger'") },
+	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nautilus") },
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("chrome-myfitnesspal") },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("$TERMINAL_RUN cmus") },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD("$TERMINAL_RUN en") },
@@ -181,8 +181,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_Escape, quit,           {0} },
-	{ MODKEY|ShiftMask,             XK_r,      quit,           {1} },
 };
 
 /* button definitions */
