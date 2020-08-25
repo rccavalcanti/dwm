@@ -162,7 +162,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("$TERMINAL_RUN zsh -c 'source /usr/share/autojump/autojump.zsh && ranger'") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nautilus") },
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("spotify") },
-	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("$TERMINAL_RUN cmus") },
+	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("alacritty --class cmus -e cmus") },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD("$TERMINAL_RUN en") },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("joplin") },
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("chrome-projetos") },
