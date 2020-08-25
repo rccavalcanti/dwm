@@ -26,7 +26,7 @@ static const char dmenufont[]       = "Fira Mono:size=9";
 #include "/home/rafael/.cache/wal/colors-wal-dwm.h"
 
 /* tagging */
-static const char *tags[] = { " WWW ", " DEV ", "  3  ", "  4  ", " VMs ", " MSG ", " MUS ", " NOT ", " CAL " };
+static const char *tags[] = { " WWW ", " SYS ", " DEV ", " DOC ", " VMs ", " MSG ", " MUS ", " NOT ", " ORG " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -37,7 +37,7 @@ static const Rule rules[] = {
 	{ "Gnome-calculator", NULL, NULL,     0,            1,           0,          0,         -1 },
 	{ "Nitrogen", NULL,       NULL,       0,            1,           0,          0,         -1 },
 	{ "Pavucontrol", NULL,    NULL,       0,            1,           0,          0,         -1 },
-	{ "Code",     NULL,       NULL,       1 << 1,       0,           0,          0,         -1 },
+	{ "Code",     NULL,       NULL,       1 << 2,       0,           0,          0,         -1 },
 	{ "Gnome-boxes", NULL,    NULL,       1 << 4,       0,           0,          0,         -1 },
 	{ "TelegramDesktop", NULL, NULL,      1 << 5,       0,           0,          0,         -1 },
 	{ "Google-chrome", "crx_hnpfjngllnobngcgfapefoaidbinmjnm", NULL, 1 << 5, 0, 0, 0,       -1 },
