@@ -34,7 +34,6 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   isterminal  noswallow  monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           0,          0,         -1 },
 	{ "Gnome-calculator", NULL, NULL,     0,            1,           0,          0,         -1 },
 	{ "Nitrogen", NULL,       NULL,       0,            1,           0,          0,         -1 },
 	{ "Pavucontrol", NULL,    NULL,       0,            1,           0,          0,         -1 },
