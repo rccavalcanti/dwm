@@ -133,7 +133,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 
 	/* dmenu */
-	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run_i")  },
+	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run++")  },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("j4-dmenu-desktop") },
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("dmenu_config") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("dmenu_ssh") },
