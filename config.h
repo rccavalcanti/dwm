@@ -104,7 +104,7 @@ static Key keys[] = {
 	STACKKEYS(MODKEY,                          focus)
 	STACKKEYS(MODKEY|ShiftMask,                push)
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_apostrophe, spawn,      SHCMD("slock") },
+	{ MODKEY,                       XK_Escape, spawn,      SHCMD("slock") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_equal,  incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_minus,  incnmaster,     {.i = -1 } },
@@ -138,7 +138,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("dmenu_config") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("dmenu_ssh") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("dmenu_ssh --vnc") },
-	{ MODKEY,                       XK_Escape, spawn,          SHCMD("dmenu_power") },
+	{ MODKEY,                       XK_apostrophe, spawn,      SHCMD("dmenu_power") },
 	{ ControlMask|Mod1Mask,         XK_v,      spawn,          SHCMD("clipmenu") },
 
 	/* Audio */
