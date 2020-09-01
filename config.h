@@ -158,7 +158,7 @@ static Key keys[] = {
 
 	/* Applications */
 	{ 0,                            XF86XK_Calculator, spawn,  SHCMD("gnome-calculator") },
-	{ MODKEY,                       XK_c,      spawn,          SHCMD("chrome-whatsapp") },
+	{ MODKEY,                       XK_c,      spawn,          SHCMD("chromapp whatsapp") },
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("org.telegram.desktop") },
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("$TERMINAL_RUN zsh -c 'source /usr/share/autojump/autojump.zsh && ranger'") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nautilus") },
@@ -166,7 +166,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("alacritty --class cmus -e cmus") },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD("$TERMINAL_RUN en") },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("joplin") },
-	{ MODKEY,                       XK_p,      spawn,          SHCMD("chrome-projetos") },
+	{ MODKEY,                       XK_p,      spawn,          SHCMD("chromapp projetos") },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("tomate-gtk") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("x-www-browser") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("x-www-browser --incognito") },
