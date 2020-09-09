@@ -37,6 +37,7 @@ static const Rule rules[] = {
 	{ "Gnome-calculator", NULL, NULL,     0,            1,           0,          0,         -1 },
 	{ "Nitrogen", NULL,       NULL,       0,            1,           0,          0,         -1 },
 	{ "Pavucontrol", NULL,    NULL,       0,            1,           0,          0,         -1 },
+	{ "Blueman-manager", NULL, NULL,      0,            1,           0,          0,         -1 },
 	{ "Alacritty", "sys",     NULL,       1 << 1,       0,           0,          0,         -1 },
 	{ "Code",     NULL,       NULL,       1 << 2,       0,           0,          0,         -1 },
 	{ "Gnome-boxes", NULL,    NULL,       1 << 4,       0,           0,          0,         -1 },
