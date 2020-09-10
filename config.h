@@ -6,6 +6,12 @@
 /* For multimedia keys */
 #include <X11/XF86keysym.h>
 
+/* For extra mouse buttons */
+#define Button6 6
+#define Button7 7
+#define Button8 8
+#define Button9 9
+
 /* patches */
 static const unsigned int gappx     = 6;        /* gap pixel between windows */
 
@@ -198,11 +204,11 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button1,        spawn,          {.v = player_next } },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = player_prev } },
+	{ ClkStatusText,        0,              Button9,        spawn,          {.v = player_next } },
+	{ ClkStatusText,        0,              Button8,        spawn,          {.v = player_prev } },
 	{ ClkStatusText,        0,              Button3,        spawn,          {.v = player_pause } },
-	{ ClkStatusText,        0,              Button4,        spawn,          {.v = volup } },
-	{ ClkStatusText,        0,              Button5,        spawn,          {.v = voldown } },
+	{ ClkStatusText,        0,              Button7,        spawn,          {.v = volup } },
+	{ ClkStatusText,        0,              Button6,        spawn,          {.v = voldown } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
