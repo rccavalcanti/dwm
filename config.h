@@ -55,11 +55,11 @@ static const Rule rules[] = {
 	{ "Code",     NULL,       NULL,       1 << 2,       0,           0,          0,         -1 },
 	{ "Gnome-boxes", NULL,    NULL,       1 << 4,       0,           0,          0,         -1 },
 	{ "TelegramDesktop", NULL, NULL,      1 << 5,       0,           0,          0,         -1 },
-	{ "Google-chrome", "crx_hnpfjngllnobngcgfapefoaidbinmjnm", NULL, 1 << 5, 0, 0, 0,       -1 },
+	{ NULL, "web.whatsapp.com", NULL,     1 << 5, 0, 0, 0,       -1 },
 	{ "Alacritty", "cmus",    NULL,       1 << 6,       0,           0,          0,         -1 },
 	{ "Spotify",  NULL,       NULL,       1 << 6,       0,           0,          0,         -1 },
 	{ "Joplin",   NULL,       NULL,       1 << 7,       0,           0,          0,         -1 },
-	{ "Google-chrome", "crx_lejijnoibbpmbfhfefonhbofommclnol", NULL, 1 << 8, 0, 0, 0,       -1 },
+	{ NULL, "docs.google.com__spreadsheets_d_14uu321lifzWad1456NsA6FgS8febTf64zDtL2nu29Is", NULL, 1 << 8, 0, 0, 0,       -1 },
 };
 
 /* layout(s) */
@@ -172,9 +172,9 @@ static Key keys[] = {
 
 	/* Applications */
 	{ 0,                            XF86XK_Calculator, spawn,  SHCMD("gnome-calculator") },
-	{ MODKEY,                       XK_c,      spawn,          SHCMD("chromapp whatsapp") },
+	{ MODKEY,                       XK_c,      spawn,          SHCMD("wa whatsapp") },
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("org.telegram.desktop") },
-	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("chromapp projetos") },
+	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("wa projetos") },
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("$TERMINAL_RUN zsh -c 'source /usr/share/autojump/autojump.zsh && ranger'") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nautilus") },
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("spotify") },
