@@ -169,11 +169,10 @@ static Key keys[] = {
 
 	/* Applications */
 	{ 0,                            XF86XK_Calculator, spawn,  SHCMD("gnome-calculator") },
-	{ MODKEY,                       XK_c,      spawn,          SHCMD("wa whatsapp") },
-	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("org.telegram.desktop") },
+	{ MODKEY,                       XK_c,      spawn,          SHCMD("wa whatsapp & org.telegram.desktop") },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("wa projetos") },
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("$TERMINAL_RUN zsh -c 'source /usr/share/autojump/autojump.zsh && ranger'") },
-	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nautilus") },
+	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nemo") },
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("spotify") },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("alacritty --class cmus -e cmus") },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD("$TERMINAL_RUN en") },
