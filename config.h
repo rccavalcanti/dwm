@@ -177,7 +177,7 @@ static Key keys[] = {
 	{ Mod1Mask|ControlMask,         XK_Delete, spawn,          SHCMD("dmenu_power") },
 	{ ControlMask|Mod1Mask,         XK_v,      spawn,          SHCMD("clipmenu") },
 
-	/* Audio */
+	/* Audio and bluetooth */
 	{ 0,                            XF86XK_AudioMute, spawn,   {.v = mute } },
 	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = voldown } },
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = volup } },
@@ -187,6 +187,7 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioPlay, spawn,   {.v = player_pause } },
 	{ 0,                            XF86XK_AudioStop, spawn,   {.v = player_stop } },
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("pavucontrol") },
+	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("blueman-manager") },
 
 	/* Printscreen */
 	{ 0,                            XK_Print,      spawn,      SHCMD("screenshot") },
@@ -195,13 +196,14 @@ static Key keys[] = {
 	/* Applications */
 	{ 0,                            XF86XK_Calculator, spawn,  SHCMD("gnome-calculator") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("wa whatsapp & org.telegram.desktop") },
-	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("wa projetos") },
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("$TERMINAL_RUN zsh -c 'source /usr/share/autojump/autojump.zsh && ranger'") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nemo") },
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("spotify") },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("alacritty --class cmus -e cmus") },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD("$TERMINAL_RUN en") },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("joplin") },
+	{ MODKEY,                       XK_o,      spawn,          SHCMD("wa projetos") },
+	{ MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("light-dark") },
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("tomate-gtk") },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("keepassxc") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("x-www-browser") },
