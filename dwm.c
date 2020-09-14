@@ -258,6 +258,7 @@ static void incrovgaps(const Arg *arg);
 static void incrihgaps(const Arg *arg);
 static void incrivgaps(const Arg *arg);
 static void togglegaps(const Arg *arg);
+static void togglesmartgaps(const Arg *arg);
 static void defaultgaps(const Arg *arg);
 static void setlayout(const Arg *arg);
 static void setmfact(const Arg *arg);
@@ -318,6 +319,7 @@ static int screen;
 static int sw, sh;           /* X display screen geometry width, height */
 static int bh, blw = 0;      /* bar geometry */
 static int enablegaps = 1;   /* enables gaps, used by togglegaps */
+static int smartgaps = 1;    /* enables gaps, used by togglesmartgaps */
 static int lrpad;            /* sum of left and right padding for text */
 static int (*xerrorxlib)(Display *, XErrorEvent *);
 static unsigned int numlockmask = 0;
@@ -1981,6 +1983,13 @@ void
 togglegaps(const Arg *arg)
 {
 	enablegaps = !enablegaps;
+	arrange(selmon);
+}
+
+void
+togglesmartgaps(const Arg *arg)
+{
+	smartgaps = !smartgaps;
 	arrange(selmon);
 }
 
