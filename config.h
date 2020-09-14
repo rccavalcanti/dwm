@@ -1,4 +1,4 @@
-/* Modifications by Rafael Cavalcanti - rafaelc.org
+/* Author: Rafael Cavalcanti - rafaelc.org
  * Based on dwm original configuration */
 
 /* See LICENSE file for copyright and license details. */
@@ -23,7 +23,7 @@ static const int swallowfloating    = 0;        /* 1 means swallow floating wind
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 4;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
-static const int showsystray        = 1;     /* 0 means no systray */
+static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Ubuntu Mono:size=10" };
@@ -67,11 +67,11 @@ static const Rule rules[] = {
 	{ "Code",     NULL,       NULL,       1 << 2,       0,           0,          0,         -1 },
 	{ "Gnome-boxes", NULL,    NULL,       1 << 4,       0,           0,          0,         -1 },
 	{ "TelegramDesktop", NULL, NULL,      1 << 5,       0,           0,          0,         -1 },
-	{ NULL, "web.whatsapp.com", NULL,     1 << 5, 0, 0, 0,       -1 },
+	{ NULL, "web.whatsapp.com", NULL,     1 << 5,       0,           0,          0,         -1 },
 	{ "Alacritty", "cmus",    NULL,       1 << 6,       0,           0,          0,         -1 },
 	{ "Spotify",  NULL,       NULL,       1 << 6,       0,           0,          0,         -1 },
 	{ "Joplin",   NULL,       NULL,       1 << 7,       0,           0,          0,         -1 },
-	{ NULL, "docs.google.com__spreadsheets_d_14uu321lifzWad1456NsA6FgS8febTf64zDtL2nu29Is", NULL, 1 << 8, 0, 0, 0,       -1 },
+	{ NULL, "docs.google.com__spreadsheets_d_14uu321lifzWad1456NsA6FgS8febTf64zDtL2nu29Is", NULL, 1 << 8, 0, 0, 0, -1 },
 };
 
 /* layout(s) */
@@ -115,7 +115,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* [> component of dmenucmd, manipulated in spawn() <] */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, NULL };
+static const char *dmenucmd[] = { "dmenu_run++", "-m", dmenumon, NULL };
 static const char *termcmd[] = { "/bin/sh", "-c", "$TERMINAL", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, "-d", "120", "34", NULL };
@@ -193,7 +193,6 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioMute, spawn,   {.v = mute } },
 	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = voldown } },
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = volup } },
-	/* Command any player but select Chromium last */
 	{ 0,                            XF86XK_AudioPrev, spawn,   {.v = player_prev } },
 	{ 0,                            XF86XK_AudioNext, spawn,   {.v = player_next } },
 	{ 0,                            XF86XK_AudioPlay, spawn,   {.v = player_pause } },
