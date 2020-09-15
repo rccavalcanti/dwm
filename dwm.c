@@ -170,6 +170,7 @@ typedef struct {
 	const char *title;
 	unsigned int tags;
 	int isfloating;
+	int issticky;
 	int isterminal;
 	int noswallow;
 	int monitor;
@@ -385,6 +386,7 @@ applyrules(Client *c)
 			c->isterminal = r->isterminal;
 			c->noswallow  = r->noswallow;
 			c->isfloating = r->isfloating;
+			c->issticky = r->issticky;
 			c->tags |= r->tags;
 			for (m = mons; m && m->num != r->monitor; m = m->next);
 			if (m)
