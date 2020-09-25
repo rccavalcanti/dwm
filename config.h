@@ -200,6 +200,8 @@ static Key keys[] = {
 
 	/* Applications */
 	{ 0,                            XF86XK_Calculator, spawn,  SHCMD("gnome-calculator") },
+	{ MODKEY,                       XK_a,      spawn,          SHCMD("firefox") },
+	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("firefox --private-window") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("wa whatsapp & org.telegram.desktop") },
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("$TERMINAL -e zsh -c 'source /usr/share/autojump/autojump.zsh && ranger'") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nemo") },
