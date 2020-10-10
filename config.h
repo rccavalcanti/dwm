@@ -58,6 +58,7 @@ static const Rule rules[] = {
 	/* Tags */
 	{ "Alacritty", "sys",     NULL,       1 << 1,       0,           0,          0,          0,         -1 },
 	{ "Code",     NULL,       NULL,       1 << 2,       0,           0,          0,          0,         -1 },
+	{ "calibre",  NULL,       NULL,       1 << 3,       0,           0,          0,          0,         -1 },
 	{ "Gnome-boxes", NULL,    NULL,       1 << 4,       0,           0,          0,          0,         -1 },
 	{ "TelegramDesktop", NULL, NULL,      1 << 5,       0,           0,          0,          0,         -1 },
 	{ NULL, "web.whatsapp.com", NULL,     1 << 5,       0,           0,          0,          0,         -1 },
