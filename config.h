@@ -34,7 +34,7 @@ static const char *fonts[]          = { "Ubuntu Mono:size=10" };
 /*#include "colors-default.h"*/
 
 /* tagging */
-static const char *tags[] = { " WWW ", " SYS ", " DEV ", " DOC ", " VMs ", " MSG ", " MUS ", " NOT ", " ORG " };
+static const char *tags[] = { " WWW ", " SYS ", " DEV ", " DOC ", " EMP ", " VMs ", " MSG ", " MUS ", " NOT " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -59,12 +59,12 @@ static const Rule rules[] = {
 	{ "Alacritty", "sys",     NULL,       1 << 1,       0,           0,          0,          0,         -1 },
 	{ "Code",     NULL,       NULL,       1 << 2,       0,           0,          0,          0,         -1 },
 	{ "calibre",  NULL,       NULL,       1 << 3,       0,           0,          0,          0,         -1 },
-	{ "Gnome-boxes", NULL,    NULL,       1 << 4,       0,           0,          0,          0,         -1 },
-	{ "TelegramDesktop", NULL, NULL,      1 << 5,       0,           0,          0,          0,         -1 },
-	{ NULL, "web.whatsapp.com", NULL,     1 << 5,       0,           0,          0,          0,         -1 },
-	{ "Alacritty", "cmus",    NULL,       1 << 6,       0,           0,          0,          0,         -1 },
-	{ "Spotify",  NULL,       NULL,       1 << 6,       0,           0,          0,          0,         -1 },
-	{ "Joplin",   NULL,       NULL,       1 << 7,       0,           0,          0,          0,         -1 },
+	{ "Gnome-boxes", NULL,    NULL,       1 << 5,       0,           0,          0,          0,         -1 },
+	{ "TelegramDesktop", NULL, NULL,      1 << 6,       0,           0,          0,          0,         -1 },
+	{ NULL, "web.whatsapp.com", NULL,     1 << 6,       0,           0,          0,          0,         -1 },
+	{ "Alacritty", "cmus",    NULL,       1 << 7,       0,           0,          0,          0,         -1 },
+	{ "Spotify",  NULL,       NULL,       1 << 7,       0,           0,          0,          0,         -1 },
+	{ "Joplin",   NULL,       NULL,       1 << 8,       0,           0,          0,          0,         -1 },
 	{ NULL, "docs.google.com__spreadsheets_d_14uu321lifzWad1456NsA6FgS8febTf64zDtL2nu29Is", NULL, 1 << 8, 0, 0, 0, 0, -1 },
 };
 
