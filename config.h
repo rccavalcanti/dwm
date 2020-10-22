@@ -47,6 +47,7 @@ static const Rule rules[] = {
 	{ "Nitrogen", NULL,       NULL,       0,            1,           0,          0,          0,         -1 },
 	{ "Pavucontrol", NULL,    NULL,       0,            1,           0,          0,          0,         -1 },
 	{ "Blueman-manager", NULL, NULL,      0,            1,           0,          0,          0,         -1 },
+	{ "Nm-connection-editor", NULL, NULL,      0,            1,           0,          0,          0,         -1 },
 
 	/* Floating */
 	{ "mpv",      NULL,       NULL,       0,            0,           1,          0,          0,         -1 },
