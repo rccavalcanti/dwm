@@ -61,6 +61,8 @@ static const Rule rules[] = {
 	{ "Code",     NULL,       NULL,       1 << 2,       0,           0,          0,          0,         -1 },
 	{ "calibre",  NULL,       NULL,       1 << 3,       0,           0,          0,          0,         -1 },
 	{ "Gnome-boxes", NULL,    NULL,       1 << 5,       0,           0,          0,          0,         -1 },
+	{ "Virt-manager", NULL,   NULL,       1 << 5,       0,           0,          0,          0,         -1 },
+	{ "VirtualBox Manager", NULL, NULL,   1 << 5,       0,           0,          0,          0,         -1 },
 	{ "TelegramDesktop", NULL, NULL,      1 << 6,       0,           0,          0,          0,         -1 },
 	{ NULL, "web.whatsapp.com", NULL,     1 << 6,       0,           0,          0,          0,         -1 },
 	{ "Alacritty", "cmus",    NULL,       1 << 7,       0,           0,          0,          0,         -1 },
