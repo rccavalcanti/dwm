@@ -28,10 +28,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Ubuntu Mono:size=10" };
 
-/* colorscheme from pywal */
-#include "/home/rafael/.cache/wal/colors-wal-dwm.h"
-/* use this if pywal unavailable */
-/*#include "colors-default.h"*/
+/* colorscheme from pywal or default */
+#include "colors.h"
 
 /* tagging */
 static const char *tags[] = { " WWW ", " SYS ", " DEV ", " DOC ", " EMP ", " VMs ", " MSG ", " MUS ", " NOT " };

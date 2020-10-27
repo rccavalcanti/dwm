@@ -1,3 +1,4 @@
 *.diff
 *.o
+/colors.h
 /dwm
