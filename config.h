@@ -129,7 +129,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_Return, togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_Escape, spawn,          SHCMD("slock") },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_bracketright, incnmaster, {.i = +1 } },
 	{ MODKEY,                       XK_bracketleft, incnmaster, {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
@@ -193,7 +193,7 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioPlay, spawn,   {.v = player_pause } },
 	{ 0,                            XF86XK_AudioStop, spawn,   {.v = player_stop } },
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("pavucontrol") },
-	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("blueman-manager") },
+	{ MODKEY,                       XK_b,      spawn,          SHCMD("blueman-manager") },
 
 	/* Printscreen */
 	{ 0,                            XK_Print,      spawn,      SHCMD("screenshot") },
@@ -204,6 +204,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("firefox") },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("firefox --private-window") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("wa whatsapp & org.telegram.desktop") },
+	{ MODKEY,                       XK_e,      spawn,          SHCMD("thunderbird") },
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("$TERMINAL -e zsh -c 'source /usr/share/autojump/autojump.zsh && ranger'") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nemo") },
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("spotify") },
@@ -214,6 +215,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("light-dark") },
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("tomate-gtk") },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("keepassxc") },
+	{ MODKEY,                       XK_r,      spawn,          SHCMD("dmenu_vms") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("x-www-browser") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("x-www-browser --incognito") },
 
