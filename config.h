@@ -32,7 +32,7 @@ static const char *fonts[]          = { "Ubuntu Mono:size=10" };
 #include "colors.h"
 
 /* tagging */
-static const char *tags[] = { " WWW ", " SYS ", " DEV ", " DOC ", " VMs ", " MSG ", " MUS ", " NOT ", " PRO "};
+static const char *tags[] = { " WWW ", " SYS ", " DEV ", " DC1 ", " DC2 ", " VMs ", " MSG ", " MUS ", " PRO "};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -58,14 +58,13 @@ static const Rule rules[] = {
 	{ "Alacritty", "sys",     NULL,       1 << 1,       0,           0,          0,          0,         -1 },
 	{ "Code",     NULL,       NULL,       1 << 2,       0,           0,          0,          0,         -1 },
 	{ "calibre",  NULL,       NULL,       1 << 3,       0,           0,          0,          0,         -1 },
-	{ "Gnome-boxes", NULL,    NULL,       1 << 4,       0,           0,          0,          0,         -1 },
-	{ "Virt-manager", NULL,   NULL,       1 << 4,       0,           0,          0,          0,         -1 },
-	{ "VirtualBox Manager", NULL, NULL,   1 << 4,       0,           0,          0,          0,         -1 },
-	{ "TelegramDesktop", NULL, NULL,      1 << 5,       0,           0,          0,          0,         -1 },
-	{ NULL, "web.whatsapp.com", NULL,     1 << 5,       0,           0,          0,          0,         -1 },
-	{ "Alacritty", "cmus",    NULL,       1 << 6,       0,           0,          0,          0,         -1 },
-	{ "Spotify",  NULL,       NULL,       1 << 6,       0,           0,          0,          0,         -1 },
-	{ "Joplin",   NULL,       NULL,       1 << 7,       0,           0,          0,          0,         -1 },
+	{ "Gnome-boxes", NULL,    NULL,       1 << 5,       0,           0,          0,          0,         -1 },
+	{ "Virt-manager", NULL,   NULL,       1 << 5,       0,           0,          0,          0,         -1 },
+	{ "VirtualBox Manager", NULL, NULL,   1 << 5,       0,           0,          0,          0,         -1 },
+	{ "TelegramDesktop", NULL, NULL,      1 << 6,       0,           0,          0,          0,         -1 },
+	{ NULL, "web.whatsapp.com", NULL,     1 << 6,       0,           0,          0,          0,         -1 },
+	{ "Alacritty", "cmus",    NULL,       1 << 7,       0,           0,          0,          0,         -1 },
+	{ "Spotify",  NULL,       NULL,       1 << 7,       0,           0,          0,          0,         -1 },
 	{ NULL, "docs.google.com__spreadsheets_d_14uu321lifzWad1456NsA6FgS8febTf64zDtL2nu29Is", NULL, 1 << 8, 0, 0, 0, 0, -1 },
 };
 
@@ -179,6 +178,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run++")  },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("j4-dmenu-desktop --dmenu=dmenu") },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("dmenu_yts") },
+	{ MODKEY,                       XK_n,      spawn,          SHCMD("bash -c 'source /usr/share/autojump/autojump.bash && dmenu_notes'") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("dmenu_ssh") },
 	{ MODKEY,                       XK_F1,     spawn,          SHCMD("dmenu_man") },
 	{ Mod1Mask|ControlMask,         XK_Delete, spawn,          SHCMD("dmenu_power") },
@@ -205,12 +205,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("firefox --private-window") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("wa whatsapp & org.telegram.desktop") },
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("thunderbird") },
-	{ MODKEY,                       XK_f,      spawn,          SHCMD("$TERMINAL -e zsh -c 'source /usr/share/autojump/autojump.zsh && ranger'") },
+	{ MODKEY,                       XK_f,      spawn,          SHCMD("$TERMINAL -e bash -c 'source /usr/share/autojump/autojump.bash && ranger'") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nemo") },
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("spotify") },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("$TERMINAL --class cmus -e cmus") },
-	{ MODKEY,                       XK_n,      spawn,          SHCMD("$TERMINAL -e en") },
-	{ MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("joplin") },
 	{ MODKEY,                       XK_o,      spawn,          SHCMD("wa projetos") },
 	{ MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("light-dark") },
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("tomate-gtk") },
