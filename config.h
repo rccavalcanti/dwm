@@ -177,7 +177,7 @@ static Key keys[] = {
 	/* dmenu */
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run++")  },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("j4-dmenu-desktop --dmenu=dmenu") },
-	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("dmenu_yts") },
+	{ MODKEY,                       XK_e,      spawn,          SHCMD("dmenu_yts") },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD("bash -c 'source /usr/share/autojump/autojump.bash && dmenu_notes'") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("dmenu_ssh") },
 	{ MODKEY,                       XK_F1,     spawn,          SHCMD("dmenu_man") },
@@ -204,7 +204,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("firefox") },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("firefox --private-window") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("wa whatsapp & org.telegram.desktop") },
-	{ MODKEY,                       XK_e,      spawn,          SHCMD("thunderbird") },
+	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("thunderbird") },
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("$TERMINAL -e bash -c 'source /usr/share/autojump/autojump.bash && ranger'") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nemo") },
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("spotify") },
