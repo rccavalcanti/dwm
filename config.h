@@ -175,8 +175,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_g,      togglesmartgaps, {.i = 0 } },
 
 	/* dmenu */
-	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run++")  },
-	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("j4-dmenu-desktop --dmenu=dmenu") },
+	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run++ -g 10 -l 5")  },
+	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("j4-dmenu-desktop --dmenu='dmenu -g 10 -l 10'") },
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("dmenu_yts") },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD("bash -c 'source /usr/share/autojump/autojump.bash && dmenu_notes'") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("dmenu_ssh") },
