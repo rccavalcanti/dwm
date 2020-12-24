@@ -177,7 +177,8 @@ static Key keys[] = {
 	/* dmenu */
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run++ -g 10 -l 5")  },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("j4-dmenu-desktop --dmenu='dmenu -g 10 -l 10'") },
-	{ MODKEY,                       XK_n,      spawn,          SHCMD("dmenu_notes") },
+	{ MODKEY,                       XK_n,      spawn,          SHCMD("$TERMINAL -e vim +Notes") },
+	{ MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("$TERMINAL -e ranger \"$NOTES\"") },
 	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("dmenu_yts") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("dmenu_ssh") },
 	{ ControlMask|Mod1Mask,         XK_v,      spawn,          SHCMD("clipmenu") },
