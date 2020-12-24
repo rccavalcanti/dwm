@@ -177,12 +177,12 @@ static Key keys[] = {
 	/* dmenu */
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run++ -g 10 -l 5")  },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("j4-dmenu-desktop --dmenu='dmenu -g 10 -l 10'") },
-	{ MODKEY,                       XK_e,      spawn,          SHCMD("dmenu_yts") },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD("dmenu_notes") },
+	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("dmenu_yts") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("dmenu_ssh") },
+	{ ControlMask|Mod1Mask,         XK_v,      spawn,          SHCMD("clipmenu") },
 	{ MODKEY,                       XK_F1,     spawn,          SHCMD("dmenu_man") },
 	{ Mod1Mask|ControlMask,         XK_Delete, spawn,          SHCMD("dmenu_power") },
-	{ ControlMask|Mod1Mask,         XK_v,      spawn,          SHCMD("clipmenu") },
 
 	/* Audio and bluetooth */
 	{ 0,                            XF86XK_AudioMute, spawn,   {.v = mute } },
@@ -204,6 +204,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("firefox") },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("firefox --private-window") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("wa whatsapp & org.telegram.desktop") },
+	{ MODKEY,                       XK_e,      spawn,          SHCMD("$TERMINAL -e vim +Files $HOME") },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("thunderbird") },
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("$TERMINAL -e ranger") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nemo") },
