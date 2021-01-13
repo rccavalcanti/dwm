@@ -202,11 +202,8 @@ static Key keys[] = {
 
 	/* Applications */
 	{ 0,                            XF86XK_Calculator, spawn,  SHCMD("gnome-calculator") },
-	{ MODKEY,                       XK_a,      spawn,          SHCMD("firefox") },
-	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("firefox --private-window") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("webapp whatsapp & org.telegram.desktop") },
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("$TERMINAL -e vim +Files $HOME") },
-	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("thunderbird") },
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("$TERMINAL -e ranger") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nemo") },
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("spotify") },
