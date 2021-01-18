@@ -209,10 +209,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nemo") },
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("spotify") },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("$TERMINAL --class cmus -e cmus") },
-	{ MODKEY,                       XK_o,      spawn,          SHCMD("webapp projetos") },
+	{ MODKEY,                       XK_o,      spawn,          SHCMD("webapp euinc") },
 	{ MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("light-dark") },
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("keepassxc") },
-	{ MODKEY,                       XK_r,      spawn,          SHCMD("dmenu_vms") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("x-www-browser") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("x-www-browser --incognito") },
 
