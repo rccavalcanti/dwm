@@ -177,9 +177,7 @@ static Key keys[] = {
 	/* dmenu */
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run++ -g 10 -l 5")  },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("j4-dmenu-desktop --dmenu='dmenu -g 10 -l 10'") },
-	{ MODKEY,                       XK_n,      spawn,          SHCMD("$TERMINAL -e vim +Notes") },
-	{ MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("$TERMINAL -e ranger \"$NOTES\"") },
-	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("dmenu_yts") },
+	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("dmenu_yts") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("dmenu_ssh") },
 	{ ControlMask|Mod1Mask,         XK_v,      spawn,          SHCMD("clipmenu") },
 	{ MODKEY,                       XK_F1,     spawn,          SHCMD("dmenu_man") },
@@ -209,9 +207,12 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nemo") },
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("spotify") },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("$TERMINAL --class cmus -e cmus") },
+	{ MODKEY,                       XK_n,      spawn,          SHCMD("$TERMINAL -e vim +Notes") },
+	{ MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("$TERMINAL -e ranger \"$NOTES\"") },
 	{ MODKEY,                       XK_o,      spawn,          SHCMD("webapp euinc") },
 	{ MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("light-dark") },
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("keepassxc") },
+	{ MODKEY,                       XK_r,      spawn,          SHCMD("virt-manager") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("x-www-browser") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("x-www-browser --incognito") },
 
