@@ -209,6 +209,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("$TERMINAL --class cmus -e cmus") },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD("$TERMINAL -e notes") },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD("$TERMINAL -e notes r") },
+	{ MODKEY|Mod1Mask,              XK_n,      spawn,          SHCMD("$TERMINAL -e notes f") },
+	{ MODKEY|ControlMask,           XK_n,      spawn,          SHCMD("$TERMINAL -e notes j") },
 	{ MODKEY,                       XK_o,      spawn,          SHCMD("webapp euinc") },
 	{ MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("light-dark") },
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("keepassxc") },
