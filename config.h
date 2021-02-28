@@ -177,8 +177,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_g,      togglesmartgaps, {.i = 0 } },
 
 	/* dmenu */
-	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run++ -g 10 -l 5")  },
-	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("j4-dmenu-desktop --dmenu='dmenu -g 10 -l 10'") },
+	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run++ -g 10 -l 15")  },
+	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("j4-dmenu-desktop --dmenu='dmenu -g 10 -l 15'") },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("dmenu_yts") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("dmenu_ssh") },
 	{ ControlMask|Mod1Mask,         XK_v,      spawn,          SHCMD("clipmenu") },
