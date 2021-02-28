@@ -32,7 +32,7 @@ static const char *fonts[]          = { "Ubuntu Mono:size=10" };
 #include "colors.h"
 
 /* tagging */
-static const char *tags[] = { " WWW ", " SYS ", " DEV ", " DC1 ", " DC2 ", " VMs ", " MSG ", " MUS ", " PRO "};
+static const char *tags[] = { " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "};
 
 static const Rule rules[] = {
 	/* xprop(1):
