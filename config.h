@@ -57,9 +57,6 @@ static const Rule rules[] = {
 
 	/* Tags */
 	{ "Alacritty", "sys",     NULL,       1 << 1,       0,           0,          0,          0,         -1 },
-	{ "Code",     NULL,       NULL,       1 << 2,       0,           0,          0,          0,         -1 },
-	{ "VSCodium", NULL,       NULL,       1 << 2,       0,           0,          0,          0,         -1 },
-	{ "calibre",  NULL,       NULL,       1 << 3,       0,           0,          0,          0,         -1 },
 	{ "Gnome-boxes", NULL,    NULL,       1 << 5,       0,           0,          0,          0,         -1 },
 	{ "Virt-manager", NULL,   NULL,       1 << 5,       0,           0,          0,          0,         -1 },
 	{ "VirtualBox Manager", NULL, NULL,   1 << 5,       0,           0,          0,          0,         -1 },
