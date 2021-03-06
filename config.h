@@ -111,7 +111,7 @@ static char dmenumon[2] = "0"; /* [> component of dmenucmd, manipulated in spawn
 static const char *dmenucmd[] = { "dmenu_run++", "-m", dmenumon, NULL };
 static const char *termcmd[] = { "/bin/sh", "-c", "$TERMINAL", NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, "-d", "120", "34", NULL };
+static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, "-o", "window.dimensions.columns=105", "-o", "window.dimensions.lines=30", NULL };
 static const char *volup[] = { "/bin/sh", "-c",  "pactl set-sink-volume @DEFAULT_SINK@ +5% && dwmbar", NULL };
 static const char *voldown[] = { "/bin/sh", "-c",  "pactl set-sink-volume @DEFAULT_SINK@ -5% && dwmbar", NULL };
 static const char *mute[] = { "/bin/sh", "-c",  "pactl set-sink-mute @DEFAULT_SINK@ toggle && dwmbar", NULL };
