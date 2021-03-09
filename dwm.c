@@ -1340,8 +1340,17 @@ maprequest(XEvent *e)
 void
 monocle(Monitor *m)
 {
-	unsigned int n = 0;
+	unsigned int n = 0, x = 0;
+	int oh, ov, ih, iv;
+	int mx = 0, my = 0, mh = 0, mw = 0;
 	Client *c;
+
+	getgaps(m, &oh, &ov, &ih, &iv, &x);
+
+	mx = m->wx + ov;
+	my = m->wy + oh;
+	mw = m->ww - 2*ov;
+	mh = m->wh - 2*oh;
 
 	for (c = m->clients; c; c = c->next)
 		if (ISVISIBLE(c))
@@ -1349,7 +1358,7 @@ monocle(Monitor *m)
 	if (n > 0) /* override layout symbol */
 		snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d]", n);
 	for (c = nexttiled(m->clients); c; c = nexttiled(c->next))
-		resize(c, m->wx, m->wy, m->ww - 2 * c->bw, m->wh - 2 * c->bw, 0);
+		resize(c, mx, my, mw - (2*c->bw), mh - (2*c->bw), 0);
 }
 
 void
