@@ -244,6 +244,7 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
+	{ ClkWinTitle,          0,              Button1,        spawn,          SHCMD("nemo") },
 	{ ClkStatusText,        0,              Button1,        spawn,          SHCMD("zenity --calendar") },
 	{ ClkStatusText,        0,              Button2,        spawn,          SHCMD("pavucontrol") },
 	{ ClkStatusText,        0,              Button9,        spawn,          {.v = player_next } },
