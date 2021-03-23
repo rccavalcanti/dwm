@@ -137,6 +137,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_Escape, spawn,          SHCMD("slock") },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
+	{ MODKEY,                       XK_bracketright, incnmaster, {.i = +1 } },
+	{ MODKEY,                       XK_bracketleft, incnmaster, {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_space,  zoom,           {0} },
