@@ -143,8 +143,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_space,  zoom,           {0} },
 	{ MODKEY,                       XK_z,      view,           {0} },
-	{ MODKEY,                       XK_Tab,    shiftview,      {.i = +1} },
-	{ MODKEY|ShiftMask,             XK_Tab,    shiftview,      {.i = -1} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("xkill") },
 	{ MODKEY,                       XK_comma,  cyclelayout,    {.i = +1 } },
@@ -262,7 +260,5 @@ static Button buttons[] = {
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
-	{ ClkTagBar,            0,              Button4,        shiftview,      {.i = -1} },
-	{ ClkTagBar,            0,              Button5,        shiftview,      {.i = +1} },
 };
 
