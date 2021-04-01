@@ -59,14 +59,13 @@ static const Rule rules[] = {
 
 	/* Tags */
 	{ "Alacritty", "sys",     NULL,       1 << 1,       0,           0,          0,          0,         -1 },
-	{ "Gnome-boxes", NULL,    NULL,       1 << 5,       0,           0,          0,          0,         -1 },
-	{ "Virt-manager", NULL,   NULL,       1 << 5,       0,           0,          0,          0,         -1 },
-	{ "VirtualBox Manager", NULL, NULL,   1 << 5,       0,           0,          0,          0,         -1 },
-	{ "TelegramDesktop", NULL, NULL,      1 << 6,       0,           0,          0,          0,         -1 },
-	{ NULL, "web.whatsapp.com", NULL,     1 << 6,       0,           0,          0,          0,         -1 },
-	{ "Alacritty", "cmus",    NULL,       1 << 7,       0,           0,          0,          0,         -1 },
-	{ "Spotify",  NULL,       NULL,       1 << 7,       0,           0,          0,          0,         -1 },
-	{ NULL, "docs.google.com__spreadsheets_d_14uu321lifzWad1456NsA6FgS8febTf64zDtL2nu29Is", NULL, 1 << 8, 0, 0, 0, 0, -1 },
+	{ "Gnome-boxes", NULL,    NULL,       1 << 6,       0,           0,          0,          0,         -1 },
+	{ "Virt-manager", NULL,   NULL,       1 << 6,       0,           0,          0,          0,         -1 },
+	{ "VirtualBox Manager", NULL, NULL,   1 << 6,       0,           0,          0,          0,         -1 },
+	{ "TelegramDesktop", NULL, NULL,      1 << 7,       0,           0,          0,          0,         -1 },
+	{ NULL, "web.whatsapp.com", NULL,     1 << 7,       0,           0,          0,          0,         -1 },
+	{ "Alacritty", "cmus",    NULL,       1 << 8,       0,           0,          0,          0,         -1 },
+	{ "Spotify",  NULL,       NULL,       1 << 8,       0,           0,          0,          0,         -1 },
 };
 
 /* layout(s) */
