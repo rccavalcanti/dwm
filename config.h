@@ -207,8 +207,11 @@ static Key keys[] = {
 
 	/* Applications */
 	{ 0,                            XF86XK_Calculator, spawn,  SHCMD("gnome-calculator") },
+	{ MODKEY,                       XK_a,      spawn,          SHCMD("chromium --profile-directory=\"Default\"") },
+	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("chromium --profile-directory=\"Profile 1\"") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("webapp whatsapp & telegram") },
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("killall telegram & xdotool windowclose `xdotool search --name WhatsApp`") },
+	{ MODKEY|Mod1Mask,              XK_d,      spawn,          SHCMD("light-dark") },
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("$TERMINAL -e vim +Files $HOME") },
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("$TERMINAL -e ranger") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nemo") },
@@ -220,12 +223,10 @@ static Key keys[] = {
 	{ MODKEY|ControlMask|Mod1Mask,  XK_n,      spawn,          SHCMD("$TERMINAL -e notes f") },
 	{ MODKEY|ControlMask,           XK_n,      spawn,          SHCMD("$TERMINAL -e notes j") },
 	{ MODKEY,                       XK_o,      spawn,          SHCMD("webapp euinc") },
-	{ MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("light-dark") },
+	{ MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("$TERMINAL -e taskwarrior-tui") },
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("keepassxc") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("x-www-browser") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("x-www-browser --incognito") },
-	{ MODKEY,                       XK_a,      spawn,          SHCMD("chromium") },
-	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("$TERMINAL -e taskwarrior-tui") },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
