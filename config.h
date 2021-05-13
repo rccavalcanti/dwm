@@ -208,7 +208,7 @@ static Key keys[] = {
 	/* Applications */
 	{ 0,                            XF86XK_Calculator, spawn,  SHCMD("gnome-calculator") },
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("chromium --profile-directory=\"Default\"") },
-	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("chromium --profile-directory=\"Profile 1\"") },
+	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("chromium --profile-directory=\"Profile 2\"") },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("webapp whatsapp & telegram") },
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("killall telegram & xdotool windowclose `xdotool search --name WhatsApp`") },
 	{ MODKEY|Mod1Mask,              XK_d,      spawn,          SHCMD("light-dark") },
