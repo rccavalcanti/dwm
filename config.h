@@ -50,8 +50,12 @@ static const Rule rules[] = {
 	{ "Nm-connection-editor", NULL, NULL,      0,            1,           0,          0,          0,         -1 },
 
 	/* Floating */
+	{ "flameshot", NULL,      NULL,       0,            1,           0,          0,          0,         -1 },
+
+	/* Sticky */
 	{ "mpv",      NULL,       NULL,       0,            0,           1,          0,          0,         -1 },
 	{ NULL,      NULL,        "Picture in picture",  0, 0,           1,          0,          0,         -1 },
+
 
 	/* Swallow */
 	{ "Alacritty", NULL,      NULL,       0,            0,           0,          1,          0,         -1 },
