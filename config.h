@@ -202,8 +202,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_b,      spawn,          SHCMD("blueman-manager") },
 
 	/* Printscreen */
-	{ 0,                            XK_Print,      spawn,      SHCMD("screenshot") },
-	{ ShiftMask,                    XK_Print,      spawn,      SHCMD("screenshot 'Selection (clipboard)'") },
+	{ 0,                            XK_Print,      spawn,      SHCMD("flameshot gui") },
+	{ ShiftMask,                    XK_Print,      spawn,      SHCMD("flameshot launcher") },
 
 	/* Applications */
 	{ 0,                            XF86XK_Calculator, spawn,  SHCMD("gnome-calculator") },
