@@ -183,7 +183,7 @@ static Key keys[] = {
 	/* dmenu */
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run++ -g 10 -l 15")  },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("j4-dmenu-desktop --dmenu='dmenu -g 10 -l 15'") },
-	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("dmenu_yts") },
+	{ MODKEY,                       XK_e,      spawn,          SHCMD("dmenu_yts") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("dmenu_ssh") },
 	{ MODKEY,                       XK_r,      spawn,          SHCMD("dmenu_url") },
 	{ ControlMask|Mod1Mask,         XK_v,      spawn,          SHCMD("clipmenu") },
@@ -212,7 +212,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("webapp whatsapp & org.telegram.desktop") },
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("killall telegram-desktop & xdotool windowclose `xdotool search --name WhatsApp`") },
 	{ MODKEY|Mod1Mask,              XK_d,      spawn,          SHCMD("light-dark") },
-	{ MODKEY,                       XK_e,      spawn,          SHCMD("$TERMINAL -e vim +Files $HOME") },
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("$TERMINAL -e ranger") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nemo") },
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("spotify") },
