@@ -62,7 +62,7 @@ static const Rule rules[] = {
 	{ NULL,       NULL,       "Event Tester", 0,        0,           0,          0,          1,         -1 },
 
 	/* Tags */
-	{ "Alacritty", "sys",     NULL,       1 << 1,       0,           0,          0,          0,         -1 },
+	{ "Alacritty", "sys",     NULL,       1 << 5,       0,           0,          0,          0,         -1 },
 	{ "Gnome-boxes", NULL,    NULL,       1 << 6,       0,           0,          0,          0,         -1 },
 	{ "Virt-manager", NULL,   NULL,       1 << 6,       0,           0,          0,          0,         -1 },
 	{ "VirtualBox Manager", NULL, NULL,   1 << 6,       0,           0,          0,          0,         -1 },
