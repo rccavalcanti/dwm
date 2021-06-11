@@ -62,12 +62,10 @@ static const Rule rules[] = {
 	{ NULL,       NULL,       "Event Tester", 0,        0,           0,          0,          1,         -1 },
 
 	/* Tags */
-	{ "Alacritty", "sys",     NULL,       1 << 5,       0,           0,          0,          0,         -1 },
-	{ "Gnome-boxes", NULL,    NULL,       1 << 6,       0,           0,          0,          0,         -1 },
-	{ "Virt-manager", NULL,   NULL,       1 << 6,       0,           0,          0,          0,         -1 },
-	{ "VirtualBox Manager", NULL, NULL,   1 << 6,       0,           0,          0,          0,         -1 },
-	{ "TelegramDesktop", NULL, NULL,      1 << 7,       0,           0,          0,          0,         -1 },
-	{ NULL, "web.whatsapp.com", NULL,     1 << 7,       0,           0,          0,          0,         -1 },
+	{ "Alacritty", "sys",     NULL,       1 << 6,       0,           0,          0,          0,         -1 },
+	{ "Gnome-boxes", NULL,    NULL,       1 << 7,       0,           0,          0,          0,         -1 },
+	{ "Virt-manager", NULL,   NULL,       1 << 7,       0,           0,          0,          0,         -1 },
+	{ "VirtualBox Manager", NULL, NULL,   1 << 7,       0,           0,          0,          0,         -1 },
 	{ "Alacritty", "cmus",    NULL,       1 << 8,       0,           0,          0,          0,         -1 },
 	{ "Spotify",  NULL,       NULL,       1 << 8,       0,           0,          0,          0,         -1 },
 };
@@ -213,8 +211,6 @@ static Key keys[] = {
 	{ 0,                            XF86XK_Calculator, spawn,  SHCMD("gnome-calculator") },
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("chromium --profile-directory=\"Default\"") },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("chromium --profile-directory=\"Profile 3\"") },
-	{ MODKEY,                       XK_c,      spawn,          SHCMD("webapp whatsapp & org.telegram.desktop") },
-	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("killall telegram-desktop & xdotool windowclose `xdotool search --name WhatsApp`") },
 	{ MODKEY|Mod1Mask,              XK_d,      spawn,          SHCMD("light-dark") },
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("$TERMINAL -e ranger") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nemo") },
