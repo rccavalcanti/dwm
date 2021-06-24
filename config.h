@@ -48,13 +48,11 @@ static const Rule rules[] = {
 	{ "Pavucontrol", NULL,    NULL,       0,            1,           0,          0,          0,         -1 },
 	{ "Blueman-manager", NULL, NULL,      0,            1,           0,          0,          0,         -1 },
 	{ "Nm-connection-editor", NULL, NULL,      0,            1,           0,          0,          0,         -1 },
-
-	/* Floating */
 	{ "flameshot", NULL,      NULL,       0,            1,           0,          0,          0,         -1 },
 
-	/* Sticky */
-	{ "mpv",      NULL,       NULL,       0,            0,           1,          0,          0,         -1 },
-	{ NULL,      NULL,        "Picture in picture",  0, 0,           1,          0,          0,         -1 },
+	/* Floating and sticky */
+	{ "mpv",      NULL,       NULL,       0,            1,           1,          0,          0,         -1 },
+	{ NULL,      NULL,        "Picture in picture",  0, 1,           1,          0,          0,         -1 },
 
 
 	/* Swallow */
