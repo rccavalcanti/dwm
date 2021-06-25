@@ -28,7 +28,7 @@ static void setgaps(int oh, int ov, int ih, int iv);
 
 /* Settings */
 #if !PERTAG_PATCH
-static int enablegaps = 0;
+static int enablegaps = 1;
 #endif // PERTAG_PATCH
 
 void
