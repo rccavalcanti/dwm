@@ -221,7 +221,7 @@ static Key keys[] = {
 	{ MODKEY|Mod1Mask,              XK_n,      spawn,          SHCMD("$TERMINAL -e notes d") },
 	{ MODKEY|ControlMask|Mod1Mask,  XK_n,      spawn,          SHCMD("$TERMINAL -e notes f") },
 	{ MODKEY|ControlMask,           XK_n,      spawn,          SHCMD("$TERMINAL -e notes j") },
-	{ MODKEY,                       XK_o,      spawn,          SHCMD("webapp euinc") },
+	{ MODKEY,                       XK_o,      spawn,          SHCMD("chromium --new-window https://docs.google.com/spreadsheets/d/14uu321lifzWad1456NsA6FgS8febTf64zDtL2nu29Is/") },
 	{ MODKEY|ShiftMask,             XK_o,      spawn,          SHCMD("$TERMINAL -e taskwarrior-tui") },
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("keepassxc") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("x-www-browser") },
