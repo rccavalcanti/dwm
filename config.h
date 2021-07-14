@@ -206,7 +206,7 @@ static Key keys[] = {
 	/* Applications */
 	{ 0,                            XF86XK_Calculator, spawn,  SHCMD("gnome-calculator") },
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("chromium --profile-directory=\"Default\"") },
-	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("chromium --profile-directory=\"Profile 3\"") },
+	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("chromium --profile-directory=\"Profile 1\"") },
 	{ MODKEY|Mod1Mask,              XK_d,      spawn,          SHCMD("light-dark") },
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("$TERMINAL -e ranger") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("nemo") },
